@@ -20,14 +20,14 @@ class Tasks(generics.GenericAPIView):
         tasks = TaskModel.objects.all()
         total_tasks = tasks.count()
         if search_param:
-            notes = tasks.filter(title__icontains=search_param)
+            tasks = tasks.filter(title__icontains=search_param)
         serializer = self.serializer_class(tasks[start_num:end_num], many=True)
         return Response({
             "status": "success",
             "total": total_tasks,
             "page": page_num,
             "last_page": math.ceil(total_tasks / limit_num),
-            "notes": serializer.data
+            "tasks": serializer.data
         })
 
     def post(self, request):
