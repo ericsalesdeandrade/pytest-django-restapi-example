@@ -13,7 +13,4 @@ class TaskModel(models.Model):
     class Meta:
         db_table = "tasks"
         ordering = ["createdAt"]
-        constraints = [
-            models.UniqueConstraint(fields=["title"], name="unique_title")
-        ]
-
+        constraints = [models.UniqueConstraint(fields=["title"], name="unique_title")]
