@@ -62,6 +62,14 @@ def test_patch_task(api_client) -> None:
     assert response_update.status_code == 200
     assert response_update.data["task"]["title"] == payload["title"]
 
+    # Task doesn't exist
+    response_update = api_client.patch(
+        f"/api/tasks/{task_id + '1'}", data=payload, format="json"
+    )
+    logger.info(f"Updated task with id: {task_id + '1'}")
+    logger.info(f"Response: {response_update.data}")
+    assert response_update.status_code == 404
+
 
 @pytest.mark.django_db
 def test_delete_task(api_client) -> None:
@@ -90,3 +98,7 @@ def test_delete_task(api_client) -> None:
     # Read the task
     response_read = api_client.get(f"/api/tasks/{task_id}", format="json")
     assert response_read.status_code == 404
+
+    # Task doesn't exist
+    response_delete = api_client.delete(f"/api/tasks/{task_id + '1'}", format="json")
+    assert response_delete.status_code == 404
