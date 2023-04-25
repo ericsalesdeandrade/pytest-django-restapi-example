@@ -1,8 +1,8 @@
-# PyTest REST API Example
+# PyTest Django REST API Example
 
-This repo contains the sample code for the article - [Building and Testing FastAPI CRUD APIs with Pytest: A Step-By-Step Guide](https://pytest-with-eric.com/pytest-advanced/pytest-fastapi-testing/)
+This repo contains the sample code for the article - [Comprehensive Step-by-Step Guide to Testing Django REST APIs with Pytest](https://pytest-with-eric.com/pytest-advanced/pytest-django-restapi-testing/)
 
-This project explains how to Build and Test A CRUD Rest API using FastAPI, SQLite (via SQLAlchemy) and Pytest.
+This project explains how to Build and Test A Django CRUD Rest API using SQLite and Pytest.
 
 # Requirements
 * Python (3.10.9)
