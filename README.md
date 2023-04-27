@@ -16,7 +16,7 @@ If you don't have Pip installed please follow instructions online on how to do i
 # How To Run the Unit Tests
 To run the Unit Tests, from the root of the repo run
 ```commandline
-pytest tests/unit/test_crud_api.py -v -s
+pytest tests/unit/test_task_api.py -v -s
 ```
 
 If you have any questions about the project please raise an Issue on GitHub. 
